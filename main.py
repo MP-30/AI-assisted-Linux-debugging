@@ -1,3 +1,4 @@
+import json
 from fastapi import FastAPI
 from lda.summary import full_summary
 from lda.llm import llm_debug
@@ -19,4 +20,4 @@ async def get_summary():
 @app.get("/debug")
 async def debug():
     summary = await full_summary()
-    return {"analysis": llm_debug(summary)}
+    return {"analysis": await llm_debug(json.dumps(summary))}

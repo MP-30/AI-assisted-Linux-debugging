@@ -18,9 +18,10 @@ install:
 run:
 	uv run uvicorn main:app --reload
 
-## cli: Run your old CLI tool through uv
+## cli: Run the CLI tool through uv (make cli cmd=summary|debug)
+cmd ?= summary
 cli:
-	uv run python cli.py
+	uv run python cli.py $(cmd)
 
 ## format: Format the codebase using uv's built-in ruff formatter
 format:

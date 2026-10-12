@@ -61,4 +61,10 @@ dependencies = [
     "websockets==15.0.1",
     "chromadb>=1.5.9",
     "prometheus-client>=0.26.0",
+    "aiopsutil>=0.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.0",
 ]
